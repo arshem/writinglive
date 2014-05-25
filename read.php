@@ -1,4 +1,7 @@
-<?php include("include/header.php"); ?>
+<?php include("include/header.php"); 
+	$DB = new Mysqlidb(DBHOST,DBUSER,DBPASS,DBNAME);
+	
+?>
 
 <script>
 	var wsUri = "ws://localhost:".$_GET["id"]."/writinglive.com/server.php"; 	
@@ -15,6 +18,6 @@
 		$('#story').text(story);
 	};
 </script>
-<h2 id="title"></h2>
-<div id="story"></div>
+<h2 id="title"><?=$title;?></h2>
+<div id="story"><?=$storytext;?></div>
 <?php include("include/footer.php"); ?>
